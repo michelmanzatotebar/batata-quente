@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.cabecalho {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.status {
+  margin: 10px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.botoes button {
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.botoes button:hover {
+  background: #555;
+}
+
+button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.mesa {
+  position: relative;
+  width: 360px;
+  height: 280px;
+  background: #ddd;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #bbb;
+}
+
+.centro-mesa {
+  width: 60px;
+  height: 60px;
+  border: 2px dashed #aaa;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.jogador {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  border: 2px solid #aaa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.jogador.eu { border-color: #333; background: #f8f8f8; }
+.jogador.pronto { border-color: green; }
+.jogador.com-batata { background: #ffe5e5; border-color: red; color: red; }
+.jogador.selecionavel { border-color: orange; background: #fff7e6; }
+
+/* Posicoes */
+.pos-cima { top: -25px; left: 50%; transform: translateX(-50%); }
+.pos-cima-dir { top: 10px; right: 40px; }
+.pos-direita { right: -25px; top: 50%; transform: translateY(-50%); }
+.pos-baixo-dir { bottom: 10px; right: 40px; }
+.pos-baixo { bottom: -25px; left: 50%; transform: translateX(-50%); }
+.pos-baixo-esq { bottom: 10px; left: 40px; }
+.pos-esquerda { left: -25px; top: 50%; transform: translateY(-50%); }
+.pos-cima-esq { top: 10px; left: 40px; }
+
+.instrucao {
+  margin-top: 20px;
+  background: #fff3cd;
+  padding: 10px;
+  border: 1px solid #ffeeba;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.aviso {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 16px;
+  margin-top: 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.info-jogador {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #333;
+}
