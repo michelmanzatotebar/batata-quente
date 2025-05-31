@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Batata Quente</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="info-jogador" id="infoJogador" style="display: none;">
+    Você é o Jogador #<span id="numeroJogador">?</span>
+  </div>
+
+  <div class="cabecalho">
+    <h1>🔥 Batata Quente</h1>
+    <div class="status" id="status">Aguardando jogadores...</div>
+    <div class="botoes">
+      <button id="botaoPronto">Pronto!</button>
+    </div>
+  </div>
+
+  <div class="mesa" id="mesa">
+    <div class="centro-mesa">
+      <span>🥔</span>
+    </div>
+  </div>
+
+  <div class="aviso" id="avisoQueimado" style="display: none;"></div>
+
+  <div class="instrucao" id="instrucao" style="display: none;">
+    Clique em um jogador para passar a batata!
+    <button id="botaoCancelar" style="display: none;">Cancelar</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
