@@ -47,7 +47,7 @@ function iniciarContagemParaExplosao() {
   }
   
 
-  const tempoAleatorio = Math.floor(Math.random() * 5000) + 5000; 
+  const tempoAleatorio = Math.floor(Math.random() * 2000) + 5000; 
   tempoInicioBatata = Date.now();
   
   
