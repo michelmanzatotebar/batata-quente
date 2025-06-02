@@ -1,5 +1,5 @@
 
-const socket = new WebSocket(`ws://${location.host}`);
+const socket = new WebSocket(`ws://batata-quente-1.onrender.com/`);
 
 const mesa = document.getElementById('mesa');
 const aviso = document.getElementById('avisoQueimado');
