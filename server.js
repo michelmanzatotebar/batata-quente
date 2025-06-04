@@ -40,23 +40,26 @@ function atualizarJogadores() {
 }
 
 function iniciarContagemParaExplosao() {
-  
+  const tempoBase = 10000;
+  const tempoAleatorioExtra = Math.floor(Math.random() * 5000) + 10000;
+  const tempoTotal = tempoBase + tempoAleatorioExtra;
+
+  console.log(`Batata vai queimar em ${tempoTotal / 1000} segundos`);
+
   if (batataTimeout) {
     clearTimeout(batataTimeout);
     batataTimeout = null;
   }
-  
 
-  const tempoAleatorio = Math.floor(Math.random() * 2000) + 5000; 
   tempoInicioBatata = Date.now();
-  
-  
+
   batataTimeout = setTimeout(() => {
     if (jogoAtivo && idComBatata) {
       queimar(idComBatata);
     }
-  }, tempoAleatorio);
+  }, tempoTotal);
 }
+
 
 function iniciarJogo() {
   if (jogadores.length < 2) return;
@@ -74,7 +77,7 @@ function iniciarJogo() {
 function passarBatata(novoId) {
   idComBatata = novoId;
   broadcast({ tipo: 'potato', holderId: novoId });
-  
+  iniciarContagemParaExplosao(); 
 }
 
 function queimar(id) {
