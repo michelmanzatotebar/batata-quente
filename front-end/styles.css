@@ -5,8 +5,8 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #333;
   display: flex;
   flex-direction: column;
@@ -18,118 +18,268 @@ body {
 
 .cabecalho {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.cabecalho h1 {
+  font-size: 3.5rem;
+  color: #fff;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+  margin-bottom: 15px;
 }
 
 .status {
-  margin: 10px;
-  padding: 10px;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  margin: 15px;
+  padding: 15px 25px;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  backdrop-filter: blur(10px);
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.status:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+}
+
+.botoes {
+  margin: 20px 0;
 }
 
 .botoes button {
-  padding: 10px 20px;
-  background: #333;
+  padding: 15px 30px;
+  background: linear-gradient(45deg, #ff6b35, #f7931e);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 25px;
   cursor: pointer;
   font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(255,107,53,0.3);
 }
 
 .botoes button:hover {
-  background: #555;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255,107,53,0.4);
+}
+
+.botoes button:active {
+  transform: translateY(-1px);
 }
 
 button:disabled {
-  background: #aaa;
+  background: linear-gradient(45deg, #aaa, #999);
   cursor: not-allowed;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
 
 .mesa {
   position: relative;
-  width: 360px;
-  height: 280px;
-  background: #ddd;
-  border-radius: 8px;
+  width: 400px;
+  height: 320px;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #bbb;
+  border: 3px solid #ecf0f1;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  margin: 20px 0;
 }
 
 .centro-mesa {
-  width: 60px;
-  height: 60px;
-  border: 2px dashed #aaa;
-  border-radius: 8px;
+  width: 80px;
+  height: 80px;
+  border: 3px dashed #bdc3c7;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 2.5rem;
+  background: rgba(255,255,255,0.1);
 }
 
 .jogador {
   position: absolute;
-  width: 50px;
-  height: 50px;
-  background: #fff;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #fff, #f8f9fa);
   border-radius: 50%;
-  border: 2px solid #aaa;
+  border: 3px solid #95a5a6;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 12px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.jogador.eu { border-color: #333; background: #f8f8f8; }
-.jogador.pronto { border-color: green; }
-.jogador.com-batata { background: #ffe5e5; border-color: red; color: red; }
-.jogador.selecionavel { border-color: orange; background: #fff7e6; }
+.jogador:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
 
-/* Posicoes */
-.pos-cima { top: -25px; left: 50%; transform: translateX(-50%); }
-.pos-cima-dir { top: 10px; right: 40px; }
-.pos-direita { right: -25px; top: 50%; transform: translateY(-50%); }
-.pos-baixo-dir { bottom: 10px; right: 40px; }
-.pos-baixo { bottom: -25px; left: 50%; transform: translateX(-50%); }
-.pos-baixo-esq { bottom: 10px; left: 40px; }
-.pos-esquerda { left: -25px; top: 50%; transform: translateY(-50%); }
-.pos-cima-esq { top: 10px; left: 40px; }
+.jogador.eu { 
+  border-color: #3498db; 
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb); 
+  box-shadow: 0 5px 15px rgba(52,152,219,0.4);
+}
+
+.jogador.pronto { 
+  border-color: #27ae60; 
+  background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+}
+
+.jogador.com-batata { 
+  background: linear-gradient(135deg, #ffebee, #ffcdd2); 
+  border-color: #e74c3c; 
+  color: #c0392b;
+  box-shadow: 0 0 20px rgba(231,76,60,0.6);
+}
+
+.jogador.selecionavel { 
+  border-color: #f39c12; 
+  background: linear-gradient(135deg, #fff8e1, #ffecb3);
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(243,156,18,0.7);
+}
+
+.pos-cima { 
+  top: -30px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+}
+
+.pos-cima-dir { 
+  top: 15px; 
+  right: 50px; 
+}
+
+.pos-direita { 
+  right: -30px; 
+  top: 50%; 
+  transform: translateY(-50%); 
+}
+
+.pos-baixo-dir { 
+  bottom: 15px; 
+  right: 50px; 
+}
+
+.pos-baixo { 
+  bottom: -30px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+}
+
+.pos-baixo-esq { 
+  bottom: 15px; 
+  left: 50px; 
+}
+
+.pos-esquerda { 
+  left: -30px; 
+  top: 50%; 
+  transform: translateY(-50%); 
+}
+
+.pos-cima-esq { 
+  top: 15px; 
+  left: 50px; 
+}
 
 .instrucao {
-  margin-top: 20px;
-  background: #fff3cd;
-  padding: 10px;
-  border: 1px solid #ffeeba;
-  border-radius: 5px;
-  font-size: 14px;
+  margin-top: 25px;
+  background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+  padding: 20px;
+  border: 2px solid #fdcb6e;
+  border-radius: 15px;
+  font-size: 16px;
   text-align: center;
+  box-shadow: 0 5px 20px rgba(253,203,110,0.3);
+  max-width: 400px;
 }
 
 .aviso {
-  background: #f8d7da;
+  background: linear-gradient(135deg, #f8d7da, #f5c6cb);
   color: #721c24;
-  border: 1px solid #f5c6cb;
-  padding: 16px;
-  margin-top: 20px;
-  border-radius: 5px;
-  font-size: 18px;
+  border: 2px solid #f5c6cb;
+  padding: 20px;
+  margin-top: 25px;
+  border-radius: 15px;
+  font-size: 20px;
   text-align: center;
+  font-weight: bold;
+  box-shadow: 0 8px 25px rgba(114,28,36,0.2);
+  max-width: 400px;
 }
 
 .info-jogador {
   position: fixed;
-  top: 10px;
-  right: 10px;
-  background: #fff;
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 12px;
-  color: #333;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12px 20px;
+  border: 2px solid #3498db;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #2c3e50;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  backdrop-filter: blur(10px);
+}
+
+#botaoCancelar {
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  margin-left: 15px;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .cabecalho h1 {
+    font-size: 2.5rem;
+  }
+  
+  .mesa {
+    width: 300px;
+    height: 240px;
+  }
+  
+  .jogador {
+    width: 50px;
+    height: 50px;
+    font-size: 11px;
+  }
+  
+  .info-jogador {
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+  }
+  
+  .status {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+  
+  .botoes button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+  
+  .instrucao {
+    font-size: 14px;
+    padding: 15px;
+  }
+  
+  .aviso {
+    font-size: 18px;
+    padding: 15px;
+  }
 }
